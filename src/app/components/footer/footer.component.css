@@ -1,0 +1,10 @@
+.footer {
+  width: 100%;
+  min-height: 5vh;
+  text-align: center;
+  background-color: indianred;
+  position: fixed;
+  bottom: 0;
+  padding: 2rem;
+  box-sizing: border-box;
+}

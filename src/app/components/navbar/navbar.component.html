@@ -1,0 +1,15 @@
+<div class="navbar">
+  <nav>
+    <a routerLink="/">Anasayfa</a>
+    <a routerLink="/about">Hakkımızda</a>
+    <a *ngIf="!authService.IsAuth()" routerLink="/login">Oturum Aç</a>
+    <span *ngIf="authService.IsAuth()">
+      <span
+        (click)="logout()"
+        style="float: right; margin-left: 10px; cursor: pointer"
+        >Oturum Kapat</span
+      >
+      <span style="float: right">{{ authService.UserName() }}</span>
+    </span>
+  </nav>
+</div>

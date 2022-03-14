@@ -1,0 +1,46 @@
+<!-- reactiveforms ve templateforms -->
+<!-- formControlName ile asp-for gibi formdaki hangi alanı bağlayacağımızı söylüyoruz. -->
+
+<!-- angularda required alanların validasyonu için kullanılır. input ile etkileşime geçtiğimizde bir hata mesajı almamızı sağlar. touched focus anlamına gelir dirty ise input'a birşey yazıldığında tetiklenir. -->
+
+<form [formGroup]="loginForm" style="padding: 5rem" (submit)="formSubmit()">
+  <input
+    style="margin-bottom: 5px"
+    type="email"
+    formControlName="email"
+    placeholder="Email Adres"
+  />
+  <span
+    *ngIf="
+      (loginForm.get('email')?.touched || loginForm.get('email')?.dirty) &&
+      loginForm.get('email')?.hasError('required')
+    "
+  >
+    Email boş geçilemez
+  </span>
+
+  <span *ngIf="loginForm.get('email')?.hasError('email')">
+    Email formatında giriniz
+  </span>
+
+  <br />
+  <input
+    style="margin-bottom: 5px"
+    type="password"
+    formControlName="password"
+    placeholder="Parola"
+  />
+  <span
+    *ngIf="
+      loginForm.get('password')?.hasError('required') &&
+      (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)
+    "
+  >
+    Parola boş geçilemez
+  </span>
+  <span *ngIf="loginForm.get('password')?.hasError('pattern')">
+    Güçlü bir parola seçiniz
+  </span>
+  <br />
+  <input [disabled]="loginForm.invalid" type="submit" value="Oturum Aç" />
+</form>

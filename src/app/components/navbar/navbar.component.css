@@ -1,0 +1,17 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  min-height: 10vh;
+  background-color: beige;
+  width: 100%;
+  padding: 1rem;
+  /* pixel cinsinden değil yüzdelik olarak ayarlamak için rem verdik. */
+  box-sizing: border-box;
+  /* padding-için tanımladığımız alanlar kutunun büyümesini sağlıyorlar. bundan dolayı aynı oranları korumak için yaptık */
+}
+
+.navbar > nav a {
+  padding: 1rem;
+  cursor: pointer;
+  color: indianred;
+}
