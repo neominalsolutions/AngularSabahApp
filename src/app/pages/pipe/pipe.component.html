@@ -1,0 +1,23 @@
+<p>pipe works!</p>
+
+<span>{{ order.orderDate | date: "dd-MM-YY HH:mm:ss" }}</span>
+<br />
+<span>{{ order.firstName | lowercase }}</span>
+<br />
+<span>{{ order.lastName | uppercase }}</span>
+<br />
+<span>{{ order.totalPrice | number: "1.2-2" }}</span>
+<br />
+<span>
+  <span>Custom Currency Pipe</span>
+  {{ order.totalPrice | currency: "RUB" }}
+
+  <br />
+
+  <span>Bizim Pipe</span>
+
+  {{ order.totalPrice | number: "1.2-2" }} {{ order.curreny | mycurrency }}
+
+  <!-- <span>{{ order.totalPrice | number: "1.2-2" }} {{ order.currecyType }}</span>
+<br /> -->
+</span>

@@ -12,8 +12,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ProductComponent } from './pages/product/product.component';
 import { CommonModule } from '@angular/common';
+import { PipeComponent } from './pages/pipe/pipe.component';
+import { MyCurrencyPipe } from './pipes/my-currency.pipe';
 
 // declaration ise angular uygulamasında kullanılan yapıların tanımı için kullanılır.
+// pipelarda declartions kısmına tanımlanır
 @NgModule({
   declarations: [
     // declaration kısmına sadece sayfa componentlerini declare ediyoruz.
@@ -21,7 +24,9 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     AboutComponent,
     LoginComponent,
-    ProductComponent, // ana root module tanıttığımız componentler
+    ProductComponent,
+    PipeComponent,
+    MyCurrencyPipe, // ana root module tanıttığımız componentler
   ],
   imports: [
     // 3rd parti modüller veya kendi modüllerimiz olabilir.
