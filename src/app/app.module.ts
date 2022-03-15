@@ -14,6 +14,7 @@ import { ProductComponent } from './pages/product/product.component';
 import { CommonModule } from '@angular/common';
 import { PipeComponent } from './pages/pipe/pipe.component';
 import { MyCurrencyPipe } from './pipes/my-currency.pipe';
+import { WarningTextDirective } from './directives/warning-text.directive';
 
 // declaration ise angular uygulamasında kullanılan yapıların tanımı için kullanılır.
 // pipelarda declartions kısmına tanımlanır
@@ -26,7 +27,8 @@ import { MyCurrencyPipe } from './pipes/my-currency.pipe';
     LoginComponent,
     ProductComponent,
     PipeComponent,
-    MyCurrencyPipe, // ana root module tanıttığımız componentler
+    MyCurrencyPipe,
+    WarningTextDirective, // ana root module tanıttığımız componentler
   ],
   imports: [
     // 3rd parti modüller veya kendi modüllerimiz olabilir.
