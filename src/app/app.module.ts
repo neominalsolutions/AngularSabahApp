@@ -8,7 +8,10 @@ import { AboutComponent } from './pages/about/about.component';
 import { ComponentsModule } from './components/components.module';
 import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ProductComponent } from './pages/product/product.component';
+import { CommonModule } from '@angular/common';
 
 // declaration ise angular uygulamasında kullanılan yapıların tanımı için kullanılır.
 @NgModule({
@@ -17,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    LoginComponent, // ana root module tanıttığımız componentler
+    LoginComponent,
+    ProductComponent, // ana root module tanıttığımız componentler
   ],
   imports: [
     // 3rd parti modüller veya kendi modüllerimiz olabilir.
@@ -26,8 +30,11 @@ import { HttpClientModule } from '@angular/common/http';
     ComponentsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CommonModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent], // uygulamanın çalıştığı component
 })
 export class AppModule {} // uygulamanın root modülü

@@ -1,0 +1,27 @@
+<!-- async pipe ile observable bir değeri okuruz. -->
+
+<div>
+  <div *ngFor="let product of products$ | async">
+    {{ product?.price }}
+    {{ product?.name }}
+    {{ product?.stock }}
+  </div>
+</div>
+
+<hr />
+
+<div>
+  <div *ngFor="let product of products">
+    {{ product?.price }}
+    {{ product?.name }}
+    {{ product?.stock }}
+  </div>
+</div>
+
+asdadasds
+
+<!-- <ul *ngFor="let product of products">
+  <li>{{ product?.Price }}</li>
+  <li>{{ product?.Name }}</li>
+  <li>{{ product?.Stock }}</li>
+</ul> -->

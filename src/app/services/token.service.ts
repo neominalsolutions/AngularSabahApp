@@ -17,6 +17,10 @@ export class TokenService {
     localStorage.removeItem('access_token');
   }
 
+  getAccessToken(): string {
+    return localStorage.getItem('access_token') as string;
+  }
+
   decodeToken(): any {
     const accessToken = localStorage.getItem('access_token');
 

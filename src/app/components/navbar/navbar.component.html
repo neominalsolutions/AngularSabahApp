@@ -2,6 +2,7 @@
   <nav>
     <a routerLink="/">Anasayfa</a>
     <a routerLink="/about">Hakkımızda</a>
+    <a routerLink="/products">Ürünler</a>
     <a *ngIf="!authService.IsAuth()" routerLink="/login">Oturum Aç</a>
     <span *ngIf="authService.IsAuth()">
       <span
